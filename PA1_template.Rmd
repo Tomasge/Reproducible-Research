@@ -7,7 +7,7 @@ output:
 
 <br>
 
-##### Prepared by *TG*, December 2017
+##### Prepared by *TG*, December 2017 
 
 <br>
 
