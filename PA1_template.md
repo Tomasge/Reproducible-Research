@@ -122,7 +122,28 @@ ggplot( totday, aes(x=`sum(steps)`) ) + geom_histogram( fill = "red4" ) +
 <br>  
 
 
-2. The Mean and the median number of steps taken by day can be calculated from the dataset without mising values with
+2. The Mean and the median number of steps by day **for the whole sample** without missing values are 
+
+
+```r
+mean(by_day$steps)
+```
+
+```
+## [1] 37.3826
+```
+
+```r
+median(by_day$steps)
+```
+
+```
+## [1] 0
+```
+
+<br>
+
+The Mean and the median number **for the daily steps taken** can be calculated from the dataset without mising values with
 
 
 ```r
@@ -163,11 +184,11 @@ ggplot(intavg, aes(y = average_steps, x = interval) ) + geom_line(color = "red4"
       labs(title = "Average number of Steps by Interval", y = "Average Steps", x = "Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 <br>
 
-2. The highest daily average number of steps is
+2. The interval with the highest daily average number of steps is
 
 
 ```r
@@ -197,6 +218,9 @@ sum( is.na( data$steps ) )
 ```
 
 which corresponds to roughly 13.11% of the total nuber of observations.
+
+<br>  
+
 
 2. To deal with the bias in many calculations missing values may cause, an `NA` in a particular interval will be replaced by the average number of steps for the whole sample in that interval. 
 
@@ -237,7 +261,7 @@ ggplot( totday1, aes(x=`sum(steps)`) ) + geom_histogram( fill = "aquamarine4" ) 
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
 ```r
 summary(totday1$`sum(steps)`)
@@ -356,5 +380,5 @@ ggplot(intavg2, aes(y = average_steps, x = interval) ) + geom_line(color="blue4"
       labs(title = "Average number of Steps by Weekday", y = "Average Steps", x = "Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
